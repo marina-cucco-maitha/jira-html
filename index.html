@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Estratégica de Chamados - Time de Dados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Análise de Sprints e Aging de Atividades</h1>
+        <p>Visão de Tempo de Resolução e Dependências (Dados de 11/09/2025)</p>
+    </header>
+
+    <div class="section incident-table">
+        <h2>Visão Detalhada de Incidentes</h2>
+        <p>Esta tabela apresenta apenas os chamados classificados como incidentes, ordenados em ordem decrescente de <strong>Aging</strong>. Chamados com mais de 50 dias em aberto estão destacados para uma atenção imediata.</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Chave</th>
+                    <th>Resumo</th>
+                    <th>Relator</th>
+                    <th>Área de Negócio</th>
+                    <th>Status</th>
+                    <th>Prioridade</th>
+                    <th>Criado</th>
+                    <th>Aging (dias)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="aging-over-50">
+                    <td>SDDADOS-357</td>
+                    <td>Possíveis divergências na Tabela Solicitações Mesa (Yunus)</td>
+                    <td>Lucas Augusto dos Santos Queiroz</td>
+                    <td>Crédito</td>
+                    <td>Pausar tarefa</td>
+                    <td>Alta</td>
+                    <td>22/abr/2025 09:46 AM</td>
+                    <td>142</td>
+                </tr>
+                <tr class="aging-over-50">
+                    <td>SDDADOS-506</td>
+                    <td>Rel_Cobranca - Erros Sellers - Urgente</td>
+                    <td>Daniel Serra Macena da Silva</td>
+                    <td>Cobrança</td>
+                    <td>AGUARDANDO SOLICITANTE</td>
+                    <td>Altíssima</td>
+                    <td>26/jun/2025 12:07 PM</td>
+                    <td>77</td>
+                </tr>
+                <tr>
+                    <td>SDDADOS-637</td>
+                    <td>Tabela Neurotech Yunus não contém todas as solicitações neurotech</td>
+                    <td>Giselle Almeida</td>
+                    <td>Crédito</td>
+                    <td>Pausar tarefa</td>
+                    <td>Altíssima</td>
+                    <td>15/ago/2025 2025 01:20 PM</td>
+                    <td>26</td>
+                </tr>
+                <tr>
+                    <td>SDDADOS-695</td>
+                    <td>Relatório unificado de Exceções - 11/09</td>
+                    <td>Karine Silva</td>
+                    <td>Operações</td>
+                    <td>Criado</td>
+                    <td>Média</td>
+                    <td>11/set/2025 10:41 AM</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="section">
+        <h2>Visão Geral do Aging das Atividades</h2>
+        <p>A maior parte dos chamados em andamento ou pausados tem um tempo de vida considerável, indicando gargalos no fluxo de trabalho. A média de tempo em status "Pausar tarefa" e "Aguardando solicitante" é de aproximadamente <strong>2 meses e 18 dias</strong>, com picos de até <strong>6 meses e 24 dias</strong> para um chamado. Isso aponta para uma alta dependência de informações ou validações externas, o que impacta diretamente a capacidade de entrega e o SLA (Service Level Agreement) do time.</p>
+    </div>
+
+
+    <div class="section">
+        <h2>Padrões e Tipos de Chamados</h2>
+        <p>Os chamados seguem padrões recorrentes que revelam as necessidades e os desafios das áreas de negócio.</p>
+        <ul class="pattern-list">
+            <li>
+                <strong>Hub de Demanda:</strong> A área de <strong>Crédito</strong> é a principal geradora de chamados. As solicitações variam entre incidentes críticos e projetos de melhoria, como a migração e higienização de bases de dados.
+            </li>
+            <li>
+                <strong>Foco em Relatórios:</strong> Há um volume significativo de solicitações para criação, ajuste e correção de relatórios existentes. Isso sugere que as equipes de negócio dependem de análises manuais e extrações customizadas.
+            </li>
+            <li>
+                <strong>Qualidade de Dados:</strong> Problemas de <strong>inconsistência e divergência de dados</strong> são recorrentes. Isso se reflete em incidentes como a tabela "Neurotech Yunus" e a "Tabela Solicitações Mesa (Yunus)".
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>Resumo Abrangente das Melhorias e Novas Solicitações</h2>
+        <p>As solicitações de melhoria e novos pedidos demonstram um foco do negócio em automação, migração de dados e criação de ferramentas para otimizar processos.</p>
+        <div class="summary-box">
+            <p><strong>Crédito:</strong> O principal foco está na modernização da infraestrutura de dados e automação de processos. As demandas incluem o projeto de prospecção, a migração de tabelas para o BQ e a criação de uma Cloud Function para consulta na Receita Federal.</p>
+        </div>
+        <div class="summary-box">
+            <p><strong>Operações:</strong> As melhorias se concentram em ajustes e criação de relatórios para otimizar a gestão de exceções e a apuração de rebates. O "Relatório unificado de Exceções" e o "Relatório de Rebate" são exemplos diretos.</p>
+        </div>
+        <div class="summary-box">
+            <p><strong>Comercial & Cobrança:</strong> As solicitações visam aprimorar a comunicação com os clientes e o acesso a informações estratégicas. Demandas como a criação de um relatório "Stop Supply" e a elaboração de um relatório de "Contas a receber Cobrança" se destacam.</p>
+        </div>
+        <div class="summary-box">
+            <p><strong>Trade Direct & Tesouraria:</strong> Buscam aprimorar o acesso e a automação de dados para relatórios financeiros e de gestão. Pedidos como o "Projeto de dados Tradedirect" e a inclusão de uma "nova coluna no novo funding" são focos principais.</p>
+        </div>
+    </div>
+
+
+
+    <div class="section">
+        <h2>Análise de Evolução dos Atendimentos (Comparativo 08/09 vs 11/09)</h2>
+        <p>A análise dos chamados mais recentes em comparação com os anteriores revela um fluxo contínuo de novas demandas, com foco em ações pontuais e correções:</p>
+        <ul class="pattern-list">
+            <li>
+                <strong>Abertura de Chamados:</strong> Entre os dias 08/09 e 11/09, foram abertos novos chamados de "Atendimento Dados" com foco em solicitações específicas, como a criação de um relatório "Stop Supply" e a atualização de uma flag na tabela de convênios.
+            </li>
+            <li>
+                <strong>Agilidade em Ações Simples:</strong> A solicitação mais recente ("Relatório unificado de Exceções - 11/09", SDDADOS-695) foi criada e permanece no status "Criado" no mesmo dia, o que indica que as demandas mais recentes ainda estão em fase inicial de análise.
+            </li>
+            <li>
+                <strong>Gargalos Persistentes:</strong> Chamados mais antigos, como o "SDDADOS-357" e "SDDADOS-506", permanecem com um alto "aging" (142 e 77 dias, respectivamente), ressaltando a importância de monitorar as atividades que dependem de terceiros para não se tornarem gargalos a longo prazo.
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="section">
+        <h2>Recomendações Estratégicas</h2>
+        <p>Com base nos padrões identificados, as seguintes ações podem otimizar o fluxo de trabalho e o valor gerado pelo time de Dados:</p>
+        <ul class="pattern-list">
+            <li>
+                <strong>Priorizar a Automação:</strong> Focar na criação de <strong>dashboards self-service</strong> e ferramentas de extração automática. Isso reduziria o volume de chamados recorrentes por relatórios e extrações manuais, liberando o time para projetos mais estratégicos.
+            </li>
+            <li>
+                <strong>Análise Proativa de Dados:</strong> Implementar um monitoramento automatizado para identificar anomalias e inconsistências nas tabelas mais críticas (como as da Neurotech e Yunus). Resolver os problemas na origem diminuirá a quantidade de incidentes gerados pelas áreas de negócio.
+            </li>
+            <li>
+                <strong>Comunicação e SLA:</strong> Reforçar a comunicação com as áreas solicitantes, principalmente para os chamados com status "Pausar tarefa" e "Aguardando solicitante". Estabelecer um processo de acompanhamento para mitigar o tempo de espera e manter o fluxo de trabalho.
+            </li>
+            <li>
+                <strong>Criação de Documentação:</strong> Desenvolver uma base de conhecimento para as áreas de negócio com FAQs, manuais de relatórios e tutoriais. Isso pode reduzir a dependência do time de Dados para solicitações simples.
+            </li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
